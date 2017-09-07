@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='tinymce_4.6.4/tinymce/js/tinymce/tinymce.min.js'></script>
+  <script>
+  tinymce.init({
+    selector: '#mce',
+	 plugins: "image",
+	height: 500,
+	 menubar: false,
+	toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | link image',
+	automatic_uploads: false,
+	file_picker_types: 'image',
+	
+
+	 file_picker_callback: function(callback, value, meta) {
+      if (meta.filetype == 'image') {
+	    $('#upload').trigger('click');
+        $('#upload').on('change', function() {
+          var file = this.files[0];
+          var reader = new FileReader();
+          reader.onload = function(e) {
+            callback(e.target.result, {
+              alt: ''
+            });
+          };
+          reader.readAsDataURL(file);
+        });
+       };
+	}
+	
+	
+  });
+$(document).ready(function(){
+$("#name").val(<%- JSON.stringify(editor) %>);
+$("#title").val(<%- JSON.stringify(title) %>);
+});
+</script>
+<div>
+<h1 id = 'x'>hello <%=user %> </h1>
+<%=reason %>
+</div>
+
+<form action=<%=place %> method="post">
+
+	<div class="form-group">
+	<input type="hidden" class="form-control" id="idname" name = "id" value=<%=id %> >
+	</div>
+	
+	<div class="form-group">
+	<input type="hidden" class="form-control" id="user" name = "email" value=<%=user %> >
+	</div>
+	
+	<div class="form-group">
+	<input type="hidden" class="form-control" id="time" name = "time" value=<%=time %> >
+	</div>
+	
+	<div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name = "editor" value="">
+    </div>
+	
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" name = "title" value="">
+    </div>
+	
+	
+    <div class="form-group">
+      <label for="article">Article:</label>
+      <textarea id="mce" class="form-control" rows="10" id="Article" name = "content"><%=content %></textarea>
+    </div>
+	
+	<div class="form-group">
+      <label for="article">submit</label>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+	 <input name="image" type="file" id="upload" class="hidden" onchange="">
+</body>
+
+</html>

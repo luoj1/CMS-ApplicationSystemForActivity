@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PPMT</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="asset/css/full-width-pics.css" rel="stylesheet">
+	
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head> 
+<body>
+<div id="navigation">
+ <header id="main_menu" class="header">
+                            <nav class="navbar navbar-default navbar-fixed-top ">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header col-sm-2">
+									<img id = "logo" src = "asset/pplogo.jpg" height="80" width="80"></img>
+									
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+											
+                                        </button>
+                                        
+                                    </div>
+									<div class="appcaptiondiv navbar-header col-sm-5">
+									<p class="appcaption">Hello <%=user %>, welcome to personal profile editor</p>
+									</div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav">
+                                           <li><a href="/">Homepage</a></li>
+                                           
+											<li class="dropdown">
+											<a class="dropbtn">guide</a>
+												<div class="dropdown-content" >
+												<a>The guide is written in this box in order to help user</a>
+												
+												</div>
+											</li>
+                                        </ul>
+										
+										
+                                    </div>
+									
+                                </div>
+								
+                            </nav>
+
+        </header>
+
+  <div>
+
+</div>
+<section>
+<div class="loginmodal-container">
+<form action='/dashboard' method="post">
+
+	<p><%=reason %></p>
+	<input type="hidden" name = "personalemail" value=<%=user %> >
+	<input type="hidden" name ="poke" value=<%=poke %>>
+	
+	
+	<label>Name on ID</label>
+	<input type="text" name = "username" >
+
+	
+	
+	<label>Birthday</label>
+	<input type="date" name = "birthday" >
+	
+	
+	<br>
+	<label>Gender</label>
+	<br>
+	<input type="radio" name = "gender" value ="M"><span>Male</span><br>
+	<input type="radio" name = "gender" value="F"><span>Female</span>
+	
+
+	<br>
+	<label>Any mock trial experience?</label>
+	<br>
+	<input type="radio" name = "experience" value="yes"><span>yes</span><br>
+	<input type="radio" name = "experience" value="no"><span>no</span>
+	
+	
+	<br>
+	<label>phone number</label>
+	<input type="text" name = "phone" >
+	<br>
+	
+	
+	<label>home address</label>
+	<input type="text" name = "address" >
+	
+	
+	
+	<label>school</label>
+	<input type="text" name = "school" >
+	
+	
+	
+	<label>grade</label>
+	<input type="number" name = "grade" min="1" max="12" >
+	
+	
+	<input type="submit">
+	
+	</form>
+	<form id = "exitpersonal" action="/dashboard" method="post">
+										   <input type="hidden" name = "exit" value="back" >
+											<input type="hidden" name ="poke" value=<%=poke %>>
+										   <button type="button" id= "back" onclick="sub()">Exit profile editor</button>
+										   </form>
+	</div>
+	</section>
+	<script src="asset/js/jquery.js"></script>
+ <script src="asset/js/bootstrap.min.js"></script>
+ <script src="personal.js"></script>
+</body>
+
+</html>

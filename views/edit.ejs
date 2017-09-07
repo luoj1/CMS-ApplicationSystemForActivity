@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src= "edit.js"></script>
+<style>
+.panel-body {
+    background-color: #eee;
+    width: 100%;
+    max-height: 300;
+    border: 1px ;
+    overflow: hidden;
+}
+</style>
+<div>
+<h1 id = 'x'>welcome <%=user %></h1>
+<form action="/edit" method="post">
+    <button name="new" value=<%=user %>>create new blog</button>
+</form>
+
+<form action="/checkapp" method="post">
+    <button name="checkapp" value=<%=user %>>checkapp</button>
+</form>
+
+<form action="/questionlist" method="post">
+    <button name="questionlist" value=<%=user %>>managing questions</button>
+</form>
+
+<form action="/checkedapp" method="post">
+    <button name="checkedapp" value=<%=user %>>check all app</button>
+</form>
+
+
+<div id = "dashboard" class = "container">
+<div id = "useremail" class=<%=user %>> </div>
+  <div class="panel-group" id = "panelboard" >
+    
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PPMT</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="asset/css/full-width-pics.css" rel="stylesheet">
+	
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head> 
+<body>
+<input type = "hidden" id ="em" name ="em" value =<%=email %> >
+<div id = "navigation">
+<header id="main_menu" class="header">
+                            <nav class="navbar navbar-default navbar-fixed-top ">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header col-sm-2">
+									<img id = "logo" src = "asset/pplogo.jpg" height="80" width="80"></img>
+									
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+											
+                                        </button>
+                                        
+                                    </div>
+									<div class="appcaptiondiv navbar-header col-sm-5">
+									<p class="appcaption">Hello <%=email %>, welcome to your dashboard</p>
+									</div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav">
+                                           <li><a href="/">Homepage</a></li>
+                                           <li class="dropdown">
+											<a class="dropbtn">App</a>
+												<div class="dropdown-content" id="appdropdown">
+												
+												
+												</div>
+											</li>
+											<li class="dropdown">
+											<a class="dropbtn">guide</a>
+												<div class="dropdown-content" >
+												<a>The guide is written in this box in order to help user</a>
+												
+												</div>
+											</li>
+                                        </ul>
+										
+										
+                                    </div>
+									
+                                </div>
+								
+                            </nav>
+
+        </header>
+		</div>
+		
+		<form id ="profilebutton" action='/profile' method='post'>
+		<input type = "hidden" name="profile" value = <%=email %>>
+		<input id ="poke" type="hidden" name="poke" value=<%=poke %>>
+		</form>
+		<form id = "appbutton" action='/application' method='post'>
+		<input type = "hidden" name="application" value = <%=email %>>
+		<input type="hidden" name="poke" value=<%=poke %>>
+		</form>
+
+
+<section class = "col-sm-6">
+<div class = "container">
+<div class="col-sm-2">
+</div>
+<div id = "personalinfo" class="col-sm-3">
+<p>username: <span id = "username"></span></p>
+<p>birthday: <span id = "birthday"></span></p>
+<p>gender: <span id = "gender"></span></p>
+<p>mock trial experience: <span id = "experience"></span></p>
+<p>address: <span id = "address"></span></p>
+<p>phone: <span id = "phone"></span></p>
+<p>school: <span id = "school"></span></p>
+<p>grade: <span id = "grade"></span></p>
+</div>
+</div>
+</section>
+
+<section "col-sm-6">
+<p id ="statusdisplay" >status:<span id="applicationstatus"></span></p>
+</section>
+ <script src="asset/js/jquery.js"></script>
+ <script src="asset/js/bootstrap.min.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
+

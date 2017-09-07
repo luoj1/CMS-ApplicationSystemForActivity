@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PPMT</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="asset/css/full-width-pics.css" rel="stylesheet">
+	
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head> 
+<body>
+
+<div id = "navigation">
+<header id="main_menu" class="header">
+                            <nav class="navbar navbar-default navbar-fixed-top ">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header col-sm-2">
+									<img id = "logo" src = "asset/pplogo.jpg" height="80" width="80"></img>
+									
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+											
+                                        </button>
+                                        
+                                    </div>
+									<div class="appcaptiondiv navbar-header col-sm-5">
+									<p class="appcaption">Hello <%=user %>, welcome to your application of PPMT</p>
+									</div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav">
+                                           <li><a href="/">Homepage</a></li>
+                                           <li class="dropdown">
+											<a class="dropbtn">Not ready?</a>
+												<div class="dropdown-content" id="appdropdown">
+												
+												<a id = "saveapp">save&exit </a>
+												<a id = "newapp">new</a>
+												</div>
+											</li>
+											<li class="dropdown">
+											<a class="dropbtn">guide</a>
+												<div class="dropdown-content" >
+												<a>The guide is written in this box in order to help user</a>
+												
+												</div>
+											</li>
+                                        </ul>
+										
+										
+                                    </div>
+									
+                                </div>
+								
+                            </nav>
+
+        </header>
+
+</div>
+
+<input type = "hidden" id ="em" name ="em" value =<%=user %> >
+<input type = "hidden" id ="purpose" name ="purpose" value =<%=purpose %> >
+
+<form id = "new" action="/application" method = "post">
+<input type="hidden" name="create" value=<%=user %>>
+<input id="poke" type="hidden" name="poke" value=<%=poke %>>
+</form>
+<section class="col-sm-3">
+</section>
+<section class="col-sm-4">
+<p><%=reason %></p>
+<br>
+<form id ="application" action="/dashboard" method = "post">
+<input type = "hidden" name ="email" value =<%=user %> >
+<input type = "hidden" id = "do" name ="submission" >
+<input type="hidden" name="poke" value=<%=poke %>>
+</form>
+<button type="button" class="btn btn-primary" id = "submitapp" disabled>submit</button>
+</section>
+
+<script src="asset/js/jquery.js"></script>
+ <script src="asset/js/bootstrap.min.js"></script>
+ <script src="application.js"></script>
+</body>
+</html>
+

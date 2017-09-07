@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	</head> 
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src= "questions.js"></script>
+
+<input type="hidden" id = "editor" name= "user" value=<%=user %> >
+<input type="hidden" id = "poke" name="poke" value=<%=poke %>>
+<form action="/edit" method="post">
+<button id = "back" name="back" value=<%=user %> >back to administrator portal</button>
+</form>
+
+<form id="updatequestionform" action="/updatequestions" method = "post">
+<input id ="updateid" type="hidden" name="id">
+<input id = "updatecontent"type="hidden" name="content">
+<input id = "updatestatus" type="hidden" name="status">
+<input id = "updateeditor" type="hidden" name="editor">
+</form>
+<form id ="deletequestionform" action="/deletequestion" method = "post">
+<input id ="deleteid" type="hidden" name="id">
+</form>
+<form id="addquestionform" action="/addquestion" method = "post">
+<input id ="addeditor" type="hidden" name="editor">
+<input id = "addcontent"type="hidden" name="content">
+<input id = "addstatus" type="hidden" name="status">
+</form>
+
+
+<div id = "dashboard" class = "container">
+  <div class="panel-group" id = "panelboard" >
+
+	
+  
+</div>
+ </div>
+ 
+ 
+ 
+ 
+ </br>
+ 
+ <textarea id = "newquestion" rows=10 class ="form-control"></textarea>
+ <button id="addquestion" >add new question</button>
+ 
+ 
+</body>
+</html>

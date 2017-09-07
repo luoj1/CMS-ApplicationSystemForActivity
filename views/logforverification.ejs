@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#1").val(<%- JSON.stringify(thing) %>);
+
+});
+</script>
+<h1>verify</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<form id="login" action=<%=place %> method = "post">
+<input id="1" type="hidden" name=<%=intent %> value=<%=thing %>>
+email:<br>
+  <input type="text" name="em"><br>
+password:<br>
+  <input type="password" name="pw"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
